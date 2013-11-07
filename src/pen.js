@@ -42,7 +42,7 @@
 
     // default settings
     var defaults = {
-      'class': 'pen',
+      'clazz': 'pen',
       debug: false,
       stay: config.stay || !config.debug,
       textarea: '<textarea name="content"></textarea>',
@@ -77,7 +77,7 @@
     var editor = defaults.editor;
 
     // set default class
-    editor.classList.add(defaults['class']);
+    editor.classList.add(defaults['clazz']);
 
     // set contenteditable
     var editable = editor.getAttribute('contenteditable');
@@ -134,7 +134,7 @@
     }
 
     var menu = doc.createElement('div');
-    menu.setAttribute('class', this.config['class'] + '-menu pen-menu');
+    menu.setAttribute('class', this.config['clazz'] + '-menu pen-menu');
     menu.innerHTML = icons;
     menu.style.display = 'none';
 
@@ -353,10 +353,10 @@
     if(!config) return utils.log('can\'t find config', true);
 
     var defaults = utils.merge(config)
-      , klass = defaults.editor.getAttribute('class');
+      , klass = defaults.editor.getAttribute('clazz');
 
-    klass = klass ? klass.replace(/\bpen\b/g, '') + ' pen-textarea ' + defaults['class'] : 'pen pen-textarea';
-    defaults.editor.setAttribute('class', klass);
+    klass = klass ? klass.replace(/\bpen\b/g, '') + ' pen-textarea ' + defaults['clazz'] : 'pen pen-textarea';
+    defaults.editor.setAttribute('clazz', klass);
     defaults.editor.innerHTML = defaults.textarea;
     return defaults.editor;
   };
