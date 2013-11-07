@@ -42,7 +42,7 @@
 
     // default settings
     var defaults = {
-      'clazz': 'pen',
+      clazz: 'pen',
       debug: false,
       stay: config.stay || !config.debug,
       textarea: '<textarea name="content"></textarea>',
