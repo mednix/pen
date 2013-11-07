@@ -77,7 +77,7 @@
     var editor = defaults.editor;
 
     // set default class
-    editor.classList.add(defaults.class);
+    editor.classList.add(defaults['class']);
 
     // set contenteditable
     var editable = editor.getAttribute('contenteditable');
@@ -134,7 +134,7 @@
     }
 
     var menu = doc.createElement('div');
-    menu.setAttribute('class', this.config.class + '-menu pen-menu');
+    menu.setAttribute('class', this.config['class'] + '-menu pen-menu');
     menu.innerHTML = icons;
     menu.style.display = 'none';
 
@@ -355,7 +355,7 @@
     var defaults = utils.merge(config)
       , klass = defaults.editor.getAttribute('class');
 
-    klass = klass ? klass.replace(/\bpen\b/g, '') + ' pen-textarea ' + defaults.class : 'pen pen-textarea';
+    klass = klass ? klass.replace(/\bpen\b/g, '') + ' pen-textarea ' + defaults['class'] : 'pen pen-textarea';
     defaults.editor.setAttribute('class', klass);
     defaults.editor.innerHTML = defaults.textarea;
     return defaults.editor;
